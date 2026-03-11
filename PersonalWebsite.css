@@ -1,0 +1,219 @@
+/* 
+Personal Website CSS File
+Megan Simpson
+March 3rd 2026
+Software Development Bootcamp
+ */
+
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;   
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    line-height: 2;
+    color: #89986D;
+    background: #9CAB84;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+/* HEADER */
+
+header {
+    background: #F6F0D7;
+    margin: 10px 10px 20px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    color: #89986D;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 0px 10px;
+    margin: 0px;
+    border-bottom: 2px solid #89986D;
+}
+
+h1 {
+    letter-spacing: 2px;
+    margin: 0px;
+}
+
+header h2 {
+    margin: 10px 0px 0px;
+    padding: 0px;
+    letter-spacing: 1px;
+}
+
+
+/* NAV BAR */
+
+.navbar .navbar-nav .nav-link {
+    margin: 0px;
+    padding: 10px;
+    font-size: 20px;
+    color: #89986D;
+}
+.navbar .navbar-nav .nav-link:hover {
+    color: #9CAB84;
+}
+
+
+/* CONTENT SECTIONS */
+section {
+    background: #F6F0D7;
+    margin: 10px 0px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    padding: 10px 10px;
+}
+
+h2 {
+    margin: 0px;
+    font-size: 20px;
+}
+
+p {
+    margin: 10px 0px 0px;
+    font-size: 20px;
+}
+
+/* ABOUT ME SECTION */
+.img-me {
+    height: auto;
+    padding: 30px;
+    display: block;
+}
+
+.about-text {
+    padding: 20px 40px 0px 20px;
+}
+
+/* CODING PROJECTS SECTION */
+
+.projects-title {
+    margin: 10px 0px 0px;
+    padding: 10px 0px 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    border-bottom:2px #89986D solid;
+}
+.card {
+    margin-top: 20px;
+    background-color:#f7f4e5; 
+    color:#89986D;
+}
+
+.card h6 {
+    color:#9CAB84;
+}
+
+/* HOBBIES SECTION */
+
+.hobbies-text {
+    margin: 20px 0px 10px;
+    padding: 10px 20px 20px 20px;
+}
+
+.hobbies-image {
+    padding: 20px;
+    margin: 20px 0px 10px;
+    display: block;
+}
+
+/* FOOTER */
+
+footer {
+    margin: 30px 0px 0px;
+    padding: 20px 20px 60px;
+    background: #F6F0D7;
+    align-items: center;
+}
+
+footer h2 {
+    color: #9CAB84;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 900;
+    border-bottom: 2px solid #999;
+    padding: 0px 0px 10px;
+}
+
+footer a {
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+    color: #89986D;
+    font-size: 20px;
+}
+
+footer a:hover {
+    color: #9CAB84;
+}
+
+footer .list-group-item {
+    padding: 0px;
+    margin: 0px;
+}
+
+footer ul{
+    padding: 10px 10px 10px 0px;
+}
+.list-group .list-group-item {
+    background-color: #F6F0D7;
+    border: none;
+    color: #89986D;
+    font-size: 18px;
+}
+
+.list-group .list-group-item .nav-link:hover {
+    color: #9CAB84;
+}
+
+/* RESPONSIVENESS - ADJUST LAYOUT FOR SMALLER SCREENS*/
+@media (max-width: 768px) {
+
+    /* NAVBAR COLLAPSE MENU */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        width: 70%;
+        z-index: 1050;
+        background-color: #F6F0D7;
+        border: 1px solid #999;
+        border-radius: 9px;
+        text-align: center;
+    }
+
+    /* HOBBIES IMAGE CENTERING */
+    .hobbies-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* PHONE TEXT LARGER */
+    p, h2, .navbar .navbar-nav .nav-link, footer h2, footer a {
+        font-size: 22px;
+    }
+
+    .list-group .list-group-item {
+        font-size: 20px;
+    }
+
+}
