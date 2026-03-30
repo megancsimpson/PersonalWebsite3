@@ -13,19 +13,19 @@ async function clickHandler(){
     const data = await response.json();
     console.log(data);
 
-    const title = document.createElement('p');  
+    const temp = document.createElement('p');  
     // <p> title: ____</p> / tell it what to print / p creates a paragraph, could be h1 or even div
-    title.textContent = "" + data.Title;
+    temp.textContent = "" + data.temp;
 
     // document refers to DOM tree (website), data refers to JSON data
-    const body = document.createElement("p");
-    body.textContent = "" + data.body;
+    const feelsLike = document.createElement("p");
+    feelsLike.textContent = "" + data.feels_like;
 
-    const id = document.createElement("p");
-    body.textContent = "" + data.id;
+    const description = document.createElement("p");
+    description.textContent = "" + data.description;
 
     // print out for user
-    output.appendChild(title);
-    output.appendChild(body);
-    output.appendChild(id);
+    output.appendChild(temp);
+    output.appendChild(feelsLike);
+    output.appendChild(description);
 }
