@@ -1,12 +1,13 @@
 
-
 const button = document.getElementById("fetch-btn");
 const output = document.getElementById("output");
 const input = document.getElementById("input");
 
+// Event
 button.addEventListener("click", clickHandler);
 
-async function clickHandler(){
+async function clickHandler()
+{
     // Clear old results
     output.innerHTML = "";
     // Making the input value
@@ -21,33 +22,47 @@ async function clickHandler(){
     function checkInput() {
         return new Promise((resolve, reject) => {
             if (data.name.toLowerCase() == query.toLowerCase()) {
-                resolve()
-                console.log("success")
+                resolve();
             }
             else {
-                reject("City not found")
+                reject();
             }   
         })
     }
-    checkInput(query)
 
-    const name = document.createElement("h5");
-    name.textContent = data.name + " Weather"
+    // Handle promise result
+    try {
+        await checkInput();
+        console.log("success");
 
-    const temp = document.createElement("h6");  
-    // <p> title: ____</p> / tell it what to print / p creates a paragraph, could be h1 or even div
-    temp.textContent = "Temperature: " + data.main.temp + " degrees";
+        const name = document.createElement("h5");
+        name.textContent = data.name + " Weather"
 
-    // document refers to DOM tree (website), data refers to JSON data
-    const feelsLike = document.createElement("h6");
-    feelsLike.textContent = "Feels like: " + data.main.feels_like + " degrees";
+        const temp = document.createElement("h6");  
+        // <p> title: ____</p> / tell it what to print / p creates a paragraph, could be h1 or even div
+        temp.textContent = "Temperature: " + data.main.temp + " degrees";
 
-    const description = document.createElement("h6");
-    description.textContent = "Description: " + data.weather[0].description;
+        // document refers to DOM tree (website), data refers to JSON data
+        const feelsLike = document.createElement("h6");
+        feelsLike.textContent = "Feels like: " + data.main.feels_like + " degrees";
 
-    // print out for user
-    output.appendChild(name);
-    output.appendChild(temp);
-    output.appendChild(feelsLike);
-    output.appendChild(description);
-}
+        const description = document.createElement("h6");
+        description.textContent = "Description: " + data.weather[0].description;
+
+        // print out for user
+        output.appendChild(name);
+        output.appendChild(temp);
+        output.appendChild(feelsLike);
+        output.appendChild(description);
+        }
+
+    // Error Result / No City Found
+    catch(err) {
+        console.log("Error: ", err);
+        const error = document.createElement("h6");
+        error.textContent = "Location not found";
+        error.style.color = "red";
+        output.appendChild(error);
+        }
+
+    }
