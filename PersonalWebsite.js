@@ -1,10 +1,20 @@
+// Personal Website JS File
+// Megan Simpson
+// April 6 2026
+// Software Development Bootcamp
+
 
 const button = document.getElementById("fetch-btn");
 const output = document.getElementById("output");
 const input = document.getElementById("input");
 
-// Event
+// Event Listenters for both click and pressing enter button
 button.addEventListener("click", clickHandler);
+input.addEventListener("keydown", function(event) {
+    if (event.key == "Enter") {
+        clickHandler();
+    }
+})
 
 async function clickHandler()
 {
