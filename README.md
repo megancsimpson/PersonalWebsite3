@@ -1,11 +1,11 @@
 
-## Weather Checker Project
+## Personal Website Project
 Megan Simpson
 Software Development Student
 April, 2026
 ### Overview
 
-This is an interactive weather website built using HTML, CSS, and JavaScript. Users can enter a city name to fetch current weather data from the OpenWeatherMap API, including temperature, “feels like” temperature, and a brief weather description. If the city is not found, a clear error message is displayed.
+This is an interactive website built using HTML, CSS, and JavaScript. Users can enter a city name to fetch current weather data from the OpenWeatherMap API, including temperature, “feels like” temperature, and a brief weather description. If the city is not found, a clear error message is displayed.
 
 ---
 
