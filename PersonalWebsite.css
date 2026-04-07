@@ -185,6 +185,13 @@ footer ul{
     color: #9CAB84;
 }
 
+/* Error Message */
+h6.error-message {
+    color: rgb(229, 65, 97);
+    font-weight: bold;
+    padding-top: 5px;
+}
+
 /* RESPONSIVENESS - ADJUST LAYOUT FOR SMALLER SCREENS*/
 @media (max-width: 768px) {
 

@@ -61,7 +61,7 @@ async function clickHandler()
         console.log("Error: ", err);
         const error = document.createElement("h6");
         error.textContent = "Location not found";
-        error.style.color = "red";
+        error.className = "error-message";
         output.appendChild(error);
         }
 
