@@ -10,11 +10,26 @@ async function clickHandler(){
     // Clear old results
     output.innerHTML = "";
     // Making the input value
-    const query = input.value;
+    const query = input.value.trim();
+
     // fetch call
     const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + encodeURIComponent(query) + "&appid=257e2f3c6f8b16ad584adc85cf805e1d&units=metric");
     // parse json data
     const data = await response.json();
+
+     // Promise to check input is true or false
+    function checkInput() {
+        return new Promise((resolve, reject) => {
+            if (data.name.toLowerCase() == query.toLowerCase()) {
+                resolve()
+                console.log("success")
+            }
+            else {
+                reject("City not found")
+            }   
+        })
+    }
+    checkInput(query)
 
     const name = document.createElement("h5");
     name.textContent = data.name + " Weather"
