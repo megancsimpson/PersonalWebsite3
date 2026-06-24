@@ -1,0 +1,63 @@
+<%- include("../partials/head") %>
+<%- include("../partials/header", { activePage, pageTitle }) %>
+
+<main>
+    <section class="container projects-page">
+        <div class="projects-title">
+            <h2>Coding Projects</h2>
+        </div>
+
+        <div class="projects-stack">
+            <% projects.forEach(function(project) { %>
+                <div class="card project-card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= project.title %></h5>
+                        <h6 class="card-subtitle mb-2 project-meta"><%= project.technologies %></h6>
+                        <p class="card-text"><%= project.description %></p>
+
+                        <% if (project.details) { %>
+                            <div class="project-details">
+                                <p class="card-text"><%= project.details.what %></p>
+
+                                <p class="card-text"><%= project.details.whyHow %></p>
+
+                                <p class="card-text"><%= project.details.when %></p>
+
+                                <p class="card-text"><%= project.details.whoWhere %></p>
+
+                                <ul class="project-outcomes">
+                                    <% project.details.outcomes.forEach(function(outcome) { %>
+                                        <li><%= outcome %></li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        <% } %>
+
+                        <% if (project.isPlaceholder) { %>
+                            <p class="card-text placeholder-note">Placeholder content for a future project. Update the title, description, technologies, GitHub link, and live demo when ready.</p>
+                        <% } %>
+
+                        <% if (project.hasWeatherWidget) { %>
+                            <div class="weather-widget">
+                                <div>
+                                    <input type="text" id="input" placeholder="Enter City">
+                                </div>
+                                <button id="fetch-btn" class="my-2">Get Weather</button>
+                                <div id="output">
+                                    <h6 class="card-subtitle mb-2 mt-1">Weather info info here</h6>
+                                </div>
+                            </div>
+                        <% } %>
+
+                        <div class="project-links">
+                            <a href="<%= project.githubLink %>">GitHub Link</a>
+                            <a href="<%= project.liveDemoLink %>">Live Demo Link</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<%- include("../partials/footer") %>

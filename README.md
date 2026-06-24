@@ -1,41 +1,73 @@
-
 ## Personal Website Project
-Megan Simpson
-Software Development Student
-April, 2026
+
+Megan Simpson  
+Junior Full-Stack Developer (Aspiring)
+
 ### Overview
 
-This is an interactive website built using HTML, CSS, and JavaScript. Users can enter a city name to fetch current weather data from the OpenWeatherMap API, including temperature, “feels like” temperature, and a brief weather description. If the city is not found, a clear error message is displayed.
+This is a server-rendered portfolio built with Express and EJS using an MVC structure.
+It is designed as a professional job-application portfolio with dedicated Home, About, and Projects pages.
 
----
+### Current Pages
 
-**Features**
-Search for a city and view current weather conditions.
+- Home: Hero-style landing page with branding copy and hiring-focused content blocks.
+- About: Personal background, career journey, and integrated outdoor/lifestyle narrative.
+- Projects: Dedicated projects page with vertically stacked project cards, placeholders, and weather widget integration.
 
-Displays:
-- City Name
-- Temperature (°C)
-- Feels Like Temperature
-- Weather Description
-- Interactive error handling for invalid city inputs.
+### Features
 
-Responsive design works on desktop and mobile.
+- MVC architecture using routes, controllers, models, and EJS views.
+- Shared partials for consistent header, navigation, and footer.
+- Responsive layout patterns for mobile, tablet, and desktop.
+- Dedicated Projects page with reusable project data model.
+- Weather Checker widget (OpenWeatherMap API) inside the projects view.
 
----
+### Tech Stack
 
-**Technologies Used**
-- HTML – page structure
-- CSS – styling, responsive layout
-- JavaScript – fetch API, DOM manipulation, async/await, promises
----
-**API**
+- Node.js
+- Express
+- EJS
+- JavaScript (ES Modules)
+- CSS
+- Bootstrap
 
-This project uses the OpenWeatherMap API
- to fetch real-time weather data.
+### Project Structure
 
----
-**Future Improvements**
-- Add weather icons based on conditions.
-- Include forecast for the next 5 days.
-- Improve accessibility and keyboard navigation.
-- Add unit toggle between Celsius and Fahrenheit.
+- app.js: Express app entry point.
+- routes/router.js: Route definitions.
+- controllers/pageController.js: Controller actions for Home, About, and Projects.
+- models/projectModel.js: Project card data source.
+- views/pages: Page views (home.ejs, about.ejs, projects.ejs).
+- views/partials: Shared layout pieces (head, header, footer).
+- public: Static assets (CSS, client-side JS, images).
+
+### Prerequisites
+
+- Node.js 18+ recommended
+- npm
+
+### Installation
+
+1. Open a terminal in the project root.
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+### Start the App
+
+Run the development server:
+
+```bash
+npm start
+```
+
+Then open:
+
+http://localhost:3000
+
+### Notes
+
+- The weather feature currently uses a client-side API key in public/weather.js.
+- For production use, move the API key to environment variables and proxy API calls through the server.
